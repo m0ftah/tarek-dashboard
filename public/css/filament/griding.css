@@ -1,0 +1,25 @@
+:root {
+  --bg: #0b0d12;
+  --panel: #12151d;
+  --muted: #8a94a7;
+  --text: #e7ecf3;
+  --accent: #4c8dff;
+  --card-radius: 16px;
+  --card-shadow: 0 10px 40px rgba(0, 0, 0, .3);
+  --divider-width: 2px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
