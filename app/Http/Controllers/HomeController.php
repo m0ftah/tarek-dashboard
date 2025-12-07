@@ -36,11 +36,6 @@ class HomeController extends Controller
             'about_description' => Setting::get('about_description'),
             'services_title' => Setting::get('services_title', 'What We do?'),
             'services_description' => Setting::get('services_description'),
-            'facebook_url' => Setting::get('facebook_url'),
-            'twitter_url' => Setting::get('twitter_url'),
-            'instagram_url' => Setting::get('instagram_url'),
-            'youtube_url' => Setting::get('youtube_url'),
-            'dribbble_url' => Setting::get('dribbble_url'),
         ];
     }
 }

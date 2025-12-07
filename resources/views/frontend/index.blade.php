@@ -6,28 +6,24 @@
 
 <!-- Hero Section Begin -->
 <section class="hero">
-    <div class="hero__slider owl-carousel">
-        @foreach($heroes as $hero)
-        <div class="hero__item set-bg" data-setbg="{{ Storage::url($hero->image) }}" style="background-image: url('{{ Storage::url($hero->image) }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="hero__text">
-                            <span data-translate="hero_subtitle">{{ $hero->subtitle }}</span>
-                            <h2 data-translate="hero_name">{{ $hero->name }}</h2>
-                            <a href="{{ $hero->button_link }}" class="primary-btn" data-translate="hero_button">{{ $hero->button_text }}</a>
-                        </div>
+    <div class="hero__item set-bg" data-setbg="{{ Storage::url($heroes->first()->image ?? 'img/hero/hero-1.jpg') }}" style="background-image: url('{{ Storage::url($heroes->first()->image ?? 'img/hero/hero-1.jpg') }}'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 684px; padding-top: 255px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="hero__text">
+                        <span data-translate="hero_subtitle">{{ $heroes->first()->subtitle ?? 'Welcome to our website' }}</span>
+                        <h2 data-translate="hero_name">{{ $heroes->first()->name ?? 'Videograph' }}</h2>
+                        <a href="{{ $heroes->first()->button_link ?? '#' }}" class="primary-btn" data-translate="hero_button">{{ $heroes->first()->button_text ?? 'Discover' }}</a>
                     </div>
                 </div>
             </div>
         </div>
-        @endforeach
     </div>
 </section>
 <!-- Hero Section End -->
 
 <!-- About Section Begin -->
-<section class="about spad fade-up" id="about">
+<section class="about spad fade-up set-bg" data-setbg="{{ asset('img/sections/back1.avif') }}" style="background-image: url('{{ asset('img/sections/back2.avif') }}'); background-repeat: no-repeat; background-size: cover; background-position: center;" id="about">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
@@ -66,7 +62,7 @@
 <!-- About Section End -->
 
 <!-- Services Section Begin -->
-<section class="services spad fade-up" id="services">
+<section class="services spad fade-up set-bg" data-setbg="{{ asset('img/sections/back2.avif') }}" style="background-image: url('{{ asset('img/sections/back1.avif') }}'); background-repeat: no-repeat; background-size: cover; background-position: center;" id="services">
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
@@ -214,11 +210,11 @@
 <!-- Partners Section End -->
 
 <!-- Songs Section Begin -->
-<section class="portfolio spad fade-up">
+<section class="portfolio spad fade-up set-bg" data-setbg="{{ asset('img/sections/back3.avif') }}" style="background-image: url('{{ asset('img/sections/back3.avif') }}'); background-repeat: no-repeat; background-size: cover; background-position: center;">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="section-title team__title fade-in-left">
+                <div class="section-title team__title fade-in-left" style="background: transparent !important;">
                     <span data-translate="songs_subtitle">Pieces of My Work</span>
                     <h2 data-translate="songs_title">Songs Taken</h2>
                 </div>
@@ -248,18 +244,4 @@
 @endsection
 
 @push('scripts')
-<script>
-    $(document).ready(function() {
-        // Force background image loading
-        $('.set-bg').each(function () {
-            var bg = $(this).data('setbg');
-            if (bg) {
-                $(this).css('background-image', 'url(' + bg + ')');
-                $(this).css('background-size', 'cover');
-                $(this).css('background-position', 'center');
-                $(this).css('background-repeat', 'no-repeat');
-            }
-        });
-    });
-</script>
 @endpush

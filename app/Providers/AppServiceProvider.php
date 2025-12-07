@@ -19,6 +19,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        view()->composer('layouts.partials.header', function ($view) {
+            $settings = [
+                'facebook_url' => \App\Models\Setting::get('facebook_url'),
+                'twitter_url' => \App\Models\Setting::get('twitter_url'),
+                'instagram_url' => \App\Models\Setting::get('instagram_url'),
+                'youtube_url' => \App\Models\Setting::get('youtube_url'),
+                'dribbble_url' => \App\Models\Setting::get('dribbble_url'),
+            ];
+            $view->with('settings', $settings);
+        });
     }
 }

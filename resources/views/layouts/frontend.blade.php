@@ -17,10 +17,9 @@
     <link rel="stylesheet" href="{{ asset('css/filament/bootstrap.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/filament/font-awesome.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/filament/elegant-icons.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/filament/owl.carousel.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/filament/magnific-popup.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/filament/slicknav.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/filament/style.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/filament/style.css') }}?v={{ time() }}" type="text/css">
 
     @stack('styles')
 </head>
@@ -44,7 +43,6 @@
     <script src="{{ asset('js/mixitup.min.js') }}"></script>
     <script src="{{ asset('js/masonry.pkgd.min.js') }}"></script>
     <script src="{{ asset('js/jquery.slicknav.js') }}"></script>
-    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
     <script src="{{ asset('js/griding.js') }}"></script>
     <script src="{{ asset('js/scroll-animations.js') }}"></script>
