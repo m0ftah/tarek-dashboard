@@ -5,15 +5,23 @@
 @section('content')
 
 <!-- Hero Section Begin -->
-<section class="hero">
-    <div class="hero__item set-bg" data-setbg="{{ Storage::url($heroes->first()->image ?? 'img/hero/hero-1.jpg') }}" style="background-image: url('{{ Storage::url($heroes->first()->image ?? 'img/hero/hero-1.jpg') }}'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 684px; padding-top: 255px;">
+@php
+    $hero = $heroes->first();
+    if ($hero && $hero->image) {
+        $heroImage = asset('storage/' . $hero->image);
+    } else {
+        $heroImage = asset('img/hero/hero-1.jpg');
+    }
+@endphp
+<section class="hero set-bg" data-setbg="{{ $heroImage }}" style="background-image: url('{{ $heroImage }}') !important; background-size: cover !important; background-position: center center !important; background-repeat: no-repeat !important; height: 684px !important; background-color: transparent !important;">
+    <div class="hero__item" style="padding-top: 255px; height: 100%;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="hero__text">
-                        <span data-translate="hero_subtitle">{{ $heroes->first()->subtitle ?? 'Welcome to our website' }}</span>
-                        <h2 data-translate="hero_name">{{ $heroes->first()->name ?? 'Videograph' }}</h2>
-                        <a href="{{ $heroes->first()->button_link ?? '#' }}" class="primary-btn" data-translate="hero_button">{{ $heroes->first()->button_text ?? 'Discover' }}</a>
+                        <span data-translate="hero_subtitle">{{ $hero->subtitle ?? 'Welcome to our website' }}</span>
+                        <h2 data-translate="hero_name">{{ $hero->name ?? 'Videograph' }}</h2>
+                        <a href="{{ $hero->button_link ?? '#' }}" class="primary-btn" data-translate="hero_button">{{ $hero->button_text ?? 'Discover' }}</a>
                     </div>
                 </div>
             </div>
@@ -81,7 +89,7 @@
                         <div class="services__item fade-in-scale animate-delay-{{ $index + 1 }}">
                             @if($service->icon)
                             <div class="services__item__icon">
-                                <img src="{{ Storage::url($service->icon) }}" alt="{{ $service->title }}">
+                                <img src="{{ Storage::disk('public')->url($service->icon) }}" alt="{{ $service->title }}">
                             </div>
                             @endif
                             <h4>{{ $service->title }}</h4>
@@ -109,7 +117,7 @@
     <div class="work__gallery">
         <div class="grid-sizer"></div>
         @foreach($works as $work)
-        <div class="work__item {{ $work->size }}__item set-bg" data-setbg="{{ Storage::url($work->image) }}">
+        <div class="work__item {{ $work->size }}__item set-bg" data-setbg="{{ Storage::disk('public')->url($work->image) }}">
             <a href="{{ $work->video_url }}" class="play-btn video-popup"><i class="fa fa-play"></i></a>
             @if($work->title)
             <div class="work__item__hover">
@@ -162,7 +170,7 @@
     <div class="griding-container">
         @foreach($colorGradings as $index => $grading)
         <div class="griding-card">
-            <div class="griding-viewer" id="viewer{{ $index + 1 }}" data-before="{{ Storage::url($grading->before_image) }}" data-after="{{ Storage::url($grading->after_image) }}">
+            <div class="griding-viewer" id="viewer{{ $index + 1 }}" data-before="{{ Storage::disk('public')->url($grading->before_image) }}" data-after="{{ Storage::disk('public')->url($grading->after_image) }}">
                 <canvas class="griding-layer" id="canvasOriginal{{ $index + 1 }}"></canvas>
                 <canvas class="griding-layer griding-graded" id="canvasGraded{{ $index + 1 }}"></canvas>
                 <div class="griding-divider" id="divider{{ $index + 1 }}"></div>
@@ -197,7 +205,7 @@
                         @foreach($partners as $index => $partner)
                         <div class="col-6">
                             <div class="partners__logo fade-in-scale animate-delay-{{ $index + 1 }}">
-                                <img src="{{ Storage::url($partner->logo) }}" alt="{{ $partner->name }}">
+                                <img src="{{ Storage::disk('public')->url($partner->logo) }}" alt="{{ $partner->name }}">
                             </div>
                         </div>
                         @endforeach
@@ -224,7 +232,7 @@
             @foreach($songs as $index => $song)
             <div class="col-lg-5 col-md-6 col-sm-6">
                 <div class="portfolio__item fade-in-scale animate-delay-{{ $index + 1 }}">
-                    <div class="portfolio__item__video set-bg" data-setbg="{{ Storage::url($song->thumbnail) }}">
+                    <div class="portfolio__item__video set-bg" data-setbg="{{ Storage::disk('public')->url($song->thumbnail) }}">
                         <a href="{{ $song->video_url }}" class="play-btn video-popup"><i class="fa fa-play"></i></a>
                     </div>
                     <div class="portfolio__item__text">

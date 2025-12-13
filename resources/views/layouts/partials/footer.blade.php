@@ -4,7 +4,12 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6">
                     <div class="footer__top__logo">
-                        <a href="{{ route('home') }}"><img src="{{ asset('img/logo.png') }}" alt=""></a>
+                        @php
+                            $logo = \App\Models\Setting::get('logo');
+                        @endphp
+                        <a href="{{ route('home') }}">
+                            <img src="{{ $logo ? asset('storage/' . $logo) : asset('img/logo.png') }}" alt="{{ $settings['site_name'] ?? 'Logo' }}">
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">

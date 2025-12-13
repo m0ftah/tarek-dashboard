@@ -601,7 +601,7 @@ section {
 .header__nav__social {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
     position: relative;
     padding-left: 0;
 }
@@ -630,7 +630,7 @@ section {
 /* Language Toggle Button */
 .language-toggle {
     display: inline-block;
-    margin-right: 0;
+    margin-right: 20px;
     order: -1;
 }
 
@@ -722,10 +722,7 @@ section {
 }
 
 .hero__item {
-    height: 900px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    height: 100%;
 }
 
 .hero__text span {

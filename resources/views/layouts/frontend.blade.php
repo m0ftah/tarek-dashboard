@@ -8,6 +8,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'Videograph | Template')</title>
+    
+    @php
+        $favicon = \App\Models\Setting::get('favicon');
+    @endphp
+    @if($favicon)
+        <link rel="icon" type="image/png" href="{{ asset('storage/' . $favicon) }}">
+        <link rel="shortcut icon" type="image/png" href="{{ asset('storage/' . $favicon) }}">
+    @else
+        <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}">
+    @endif
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">

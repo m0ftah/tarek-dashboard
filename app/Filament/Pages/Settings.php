@@ -7,6 +7,7 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Pages\Page;
 use Filament\Notifications\Notification;
+use Filament\Actions\Action;
 
 class Settings extends Page
 {
@@ -23,6 +24,8 @@ class Settings extends Page
         $this->form->fill([
             'site_name' => Setting::get('site_name', 'Videograph'),
             'site_name_ar' => Setting::get('site_name_ar', 'فيديوجراف'),
+            'logo' => Setting::get('logo'),
+            'favicon' => Setting::get('favicon'),
             'about_title' => Setting::get('about_title', 'Who we are?'),
             'about_title_ar' => Setting::get('about_title_ar', 'من نحن؟'),
             'about_description' => Setting::get('about_description'),
@@ -54,6 +57,22 @@ class Settings extends Page
                                     ->required(),
                                 Forms\Components\TextInput::make('site_name_ar')
                                     ->label('Site Name (Arabic)'),
+                                Forms\Components\FileUpload::make('logo')
+                                    ->label('Logo')
+                                    ->image()
+                                    ->directory('settings/logo')
+                                    ->imageEditor()
+                                    ->maxSize(2048)
+                                    ->helperText('Upload your website logo (recommended: PNG with transparent background)')
+                                    ->columnSpanFull(),
+                                Forms\Components\FileUpload::make('favicon')
+                                    ->label('Favicon')
+                                    ->image()
+                                    ->directory('settings/favicon')
+                                    ->maxSize(512)
+                                    ->acceptedFileTypes(['image/png', 'image/x-icon', 'image/vnd.microsoft.icon'])
+                                    ->helperText('Upload your website favicon (recommended: 32x32 or 16x16 PNG/ICO)')
+                                    ->columnSpanFull(),
                             ]),
 
                         Forms\Components\Tabs\Tab::make('About Section')
@@ -129,5 +148,14 @@ class Settings extends Page
             ->success()
             ->title('Settings saved successfully')
             ->send();
+    }
+
+    protected function getFormActions(): array
+    {
+        return [
+            Action::make('save')
+                ->label('Save')
+                ->action('save'),
+        ];
     }
 }
