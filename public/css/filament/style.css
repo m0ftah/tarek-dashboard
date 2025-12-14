@@ -2523,19 +2523,8 @@ canvas.griding-layer {
     inset: 0;
 }
 
-/* Original canvas (before image) - always visible behind */
-canvas.griding-layer:not(.griding-graded) {
-    z-index: 1;
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Graded canvas (after image) - on top with clip-path */
 .griding-graded {
-    clip-path: inset(0 0 0 50%);
-    z-index: 2;
-    opacity: 1;
-    visibility: visible;
+    clip-path: inset(0 0 0 0%);
 }
 
 .griding-divider {

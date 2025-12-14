@@ -107,13 +107,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let isDragging = false;
 
-        // Initially set the slider to 50% (middle position)
+        // Initially hide the graded image (show only the original)
         gradedCanvas.style.clipPath = `inset(0 0 0 50%)`;
 
-        // Set initial position to 50% (middle)
-        handle.style.left = "50%";
+        // Reset any inline styles that might interfere with CSS positioning
+        handle.style.left = "";
         handle.style.top = "";
-        divider.style.left = "50%";
+        divider.style.left = "";
 
         // Force a reflow to ensure CSS transforms are applied
         handle.offsetHeight;
