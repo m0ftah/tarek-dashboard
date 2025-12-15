@@ -264,7 +264,10 @@ section {
 .col-lg-4,
 .col-lg-8,
 .col-lg-12 {
-    background-color: transparent !important;
+    background-color: transparent;
+}
+.service-item {
+    background-color: #0c0c0c !important;
 }
 
 /* Staggered animations */
@@ -289,6 +292,7 @@ section {
 -----------------------*/
 .section-title {
     margin-bottom: 50px;
+    margin-top: 20px;
 }
 .section-title.center-title {
     text-align: center;

@@ -71,7 +71,7 @@
 
 <!-- Services Section Begin -->
 <section class="services spad fade-up set-bg" data-setbg="{{ asset('img/sections/back2.avif') }}" style="background-image: url('{{ asset('img/sections/back1.avif') }}'); background-repeat: no-repeat; background-size: cover; background-position: center;" id="services">
-    <div class="container">
+    <div class="container service-item">
         <div class="row">
             <div class="col-lg-4">
                 <div class="services__title fade-in-left">
@@ -82,10 +82,10 @@
                     <p data-translate="services_description">{{ $settings['services_description'] }}</p>
                 </div>
             </div>
-            <div class="col-lg-8">
+            <div class="col-lg-8 ">
                 <div class="row">
                     @foreach($services as $index => $service)
-                    <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="col-lg-6 col-md-6 col-sm-6 service-item">
                         <div class="services__item fade-in-scale animate-delay-{{ $index + 1 }}">
                             @if($service->icon)
                             <div class="services__item__icon">
