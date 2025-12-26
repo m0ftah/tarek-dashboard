@@ -69,7 +69,7 @@ const translations = {
 
         // Hero Section
         hero_subtitle: "لتصميم المواقع وتحرير الفيديو",
-        hero_name: "طارق الشهودي",
+        hero_name: "طارق الشويهدي",
         hero_button: "اعرف المزيد عنا",
 
         // About Section
@@ -158,6 +158,41 @@ function updateLanguage() {
         const key = element.getAttribute('data-translate');
         if (translations[currentLanguage][key]) {
             element.textContent = translations[currentLanguage][key];
+        }
+    });
+
+    // Update service titles and descriptions based on language
+    const serviceTitles = document.querySelectorAll('.service-title');
+    serviceTitles.forEach(title => {
+        const titleEn = title.getAttribute('data-title-en');
+        const titleAr = title.getAttribute('data-title-ar');
+        if (currentLanguage === 'ar' && titleAr) {
+            title.textContent = titleAr;
+        } else if (currentLanguage === 'en' && titleEn) {
+            title.textContent = titleEn;
+        }
+    });
+
+    const serviceDescriptions = document.querySelectorAll('.service-description');
+    serviceDescriptions.forEach(desc => {
+        const descEn = desc.getAttribute('data-desc-en');
+        const descAr = desc.getAttribute('data-desc-ar');
+        if (currentLanguage === 'ar' && descAr) {
+            desc.textContent = descAr;
+        } else if (currentLanguage === 'en' && descEn) {
+            desc.textContent = descEn;
+        }
+    });
+
+    // Update about description based on language
+    const aboutDescriptions = document.querySelectorAll('.about-description');
+    aboutDescriptions.forEach(desc => {
+        const descEn = desc.getAttribute('data-desc-en');
+        const descAr = desc.getAttribute('data-desc-ar');
+        if (currentLanguage === 'ar' && descAr) {
+            desc.textContent = descAr;
+        } else if (currentLanguage === 'en' && descEn) {
+            desc.textContent = descEn;
         }
     });
 

@@ -59,8 +59,9 @@
                         <span data-translate="about_subtitle">About videograph</span>
                         <h2 data-translate="about_title">{{ $settings['about_title'] }}</h2>
                     </div>
+{{--                    {{dd($settings['about_description_ar'])}}--}}
                     <div class="about__text__desc">
-                        <p>{{ $settings['about_description'] }}</p>
+                        <p class="about-description" data-desc-en="{{ $settings['about_description'] }}" data-desc-ar="{{ $settings['about_description_ar'] ?? $settings['about_description'] }}">{{ $settings['about_description'] }}</p>
                     </div>
                 </div>
             </div>
@@ -92,8 +93,8 @@
                                 <img src="{{ Storage::disk('public')->url($service->icon) }}" alt="{{ $service->title }}">
                             </div>
                             @endif
-                            <h4>{{ $service->title }}</h4>
-                            <p>{{ $service->description }}</p>
+                            <h4 class="service-title" data-title-en="{{ $service->title }}" data-title-ar="{{ $service->title_ar ?? $service->title }}">{{ $service->title }}</h4>
+                            <p class="service-description" data-desc-en="{{ $service->description }}" data-desc-ar="{{ $service->description_ar ?? $service->description }}">{{ $service->description }}</p>
                         </div>
                     </div>
                     @endforeach
@@ -108,7 +109,7 @@
 <section class="work fade-up" id="portfolio">
     <div class="row">
         <div class="col-lg-12">
-            <div class="section-title center-title">
+            <div class=" center-title">
                 <span>Our Portfolio</span>
                 <h2>Recent Work</h2>
             </div>

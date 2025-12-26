@@ -294,10 +294,39 @@ section {
     margin-bottom: 50px;
     margin-top: 20px;
 }
-.section-title.center-title {
+.center-title {
+    margin-bottom: 50px;
+    margin-top: 20px;
     text-align: center;
 }
-.section-title.center-title h2:after {
+.center-title h2:after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 5px;
+    width: 70px;
+    background: #bd1d1d;
+    content: "";
+}
+.center-title span {
+    text-align: center;
+    color: #ffffff;
+    display: block;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+.center-title h2 {
+    text-align: center;
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 25px;
+}
+
+.center-title h2:after {
     right: 0;
     margin: 0 auto;
 }
@@ -309,6 +338,12 @@ section {
     text-transform: uppercase;
     margin-bottom: 6px;
 }
+[dir="rtl"] .section-title span {
+    text-align: right;
+}
+[dir="rtl"] .about__text__desc p {
+    text-align: right;
+}
 .section-title h2 {
     color: #ffffff;
     font-weight: 700;
@@ -316,6 +351,10 @@ section {
     position: relative;
     padding-bottom: 25px;
 }
+[dir="rtl"] .section-title h2 {
+    text-align: right;
+}
+
 .section-title h2:after {
     position: absolute;
     left: 0;
@@ -506,7 +545,7 @@ section {
 }
 
 .header__logo {
-    padding: 30px 0;
+    padding: 20px 0;
 }
 .header__logo a {
     display: inline-block;
@@ -1446,8 +1485,14 @@ section {
     margin-top: 26px;
     margin-bottom: 18px;
 }
+[dir="rtl"] .services__item h4 {
+    text-align: right;
+}
 .services__item p {
     margin-bottom: 0;
+}
+[dir="rtl"] .services__item p {
+    text-align: right;
 }
 
 .services__item__icon {
