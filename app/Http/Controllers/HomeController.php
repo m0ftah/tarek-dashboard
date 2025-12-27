@@ -45,7 +45,7 @@ class HomeController extends Controller
             'twitter_url' => Setting::get('twitter_url'),
             'instagram_url' => Setting::get('instagram_url'),
             'youtube_url' => Setting::get('youtube_url'),
-            'dribbble_url' => Setting::get('dribbble_url'),
+            'snapchat_url' => Setting::get('snapchat_url'),
             'contact_email' => Setting::get('contact_email'),
             'contact_phone' => Setting::get('contact_phone'),
         ];

@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
                 'twitter_url' => \App\Models\Setting::get('twitter_url'),
                 'instagram_url' => \App\Models\Setting::get('instagram_url'),
                 'youtube_url' => \App\Models\Setting::get('youtube_url'),
-                'dribbble_url' => \App\Models\Setting::get('dribbble_url'),
+                'snapchat_url' => \App\Models\Setting::get('snapchat_url'),
             ];
             $view->with('settings', $settings);
         });

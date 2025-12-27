@@ -38,7 +38,7 @@ class Settings extends Page
             'twitter_url' => Setting::get('twitter_url'),
             'instagram_url' => Setting::get('instagram_url'),
             'youtube_url' => Setting::get('youtube_url'),
-            'dribbble_url' => Setting::get('dribbble_url'),
+            'snapchat_url' => Setting::get('snapchat_url'),
             'contact_email' => Setting::get('contact_email'),
             'contact_phone' => Setting::get('contact_phone'),
         ]);
@@ -117,8 +117,8 @@ class Settings extends Page
                                 Forms\Components\TextInput::make('youtube_url')
                                     ->label('YouTube URL')
                                     ->url(),
-                                Forms\Components\TextInput::make('dribbble_url')
-                                    ->label('Dribbble URL')
+                                Forms\Components\TextInput::make('snapchat_url')
+                                    ->label('Snapchat URL')
                                     ->url(),
                             ]),
 

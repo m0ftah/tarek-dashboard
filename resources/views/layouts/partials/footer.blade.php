@@ -20,8 +20,8 @@
                         @if($settings['twitter_url'] ?? '')
                         <a href="{{ $settings['twitter_url'] }}"><i class="fa fa-twitter"></i></a>
                         @endif
-                        @if($settings['dribbble_url'] ?? '')
-                        <a href="{{ $settings['dribbble_url'] }}"><i class="fa fa-dribbble"></i></a>
+                        @if($settings['snapchat_url'] ?? '')
+                        <a href="{{ $settings['snapchat_url'] }}"><i class="fa fa-snapchat-ghost"></i></a>
                         @endif
                         @if($settings['instagram_url'] ?? '')
                         <a href="{{ $settings['instagram_url'] }}"><i class="fa fa-instagram"></i></a>
