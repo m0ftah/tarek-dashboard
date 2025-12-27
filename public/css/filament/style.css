@@ -34,6 +34,7 @@ html {
 html,
 body {
     height: 100%;
+    width: 100%;
     font-family: "Josefin Sans", sans-serif;
     -webkit-font-smoothing: antialiased;
     background-color: #0c0c0c !important;
@@ -339,6 +340,9 @@ section {
     margin-bottom: 6px;
 }
 [dir="rtl"] .section-title span {
+    text-align: right;
+}
+[dir="rtl"] .section-title h3 {
     text-align: right;
 }
 [dir="rtl"] .about__text__desc p {
@@ -704,6 +708,7 @@ section {
 [dir="rtl"] .header__nav__option {
     text-align: left;
     flex-direction: row-reverse;
+    justify-content: flex-start;
 }
 
 [dir="rtl"] .header__nav__social {
@@ -766,6 +771,22 @@ section {
 
 .hero__item {
     height: 100%;
+}
+[dir="rtl"] .hero__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: right;
+}
+
+[dir="rtl"] .hero__text span {
+    text-align: right;
+}
+[dir="rtl"] .hero__text h2 {
+    text-align: right;
+}
+[dir="rtl"] .hero__text a.primary-btn {
+    align-self: flex-start;
 }
 
 .hero__text span {
@@ -1395,6 +1416,8 @@ section {
 }
 
 .about__text {
+    padding-top: 15px;
+    padding-bottom: 15px;
     padding-left: 30px;
 }
 .about__text .services__item .services__item__icon:after {
@@ -1559,6 +1582,7 @@ section {
 }
 
 .portfolio__item {
+    padding-bottom: 15px;
     margin-bottom: 35px;
 }
 .portfolio__item:hover .portfolio__item__text h4:after {
@@ -2216,9 +2240,9 @@ section {
         margin-bottom: 50px;
     }
 
-    .about__text {
-        padding-left: 0;
-    }
+    /*.about__text {*/
+    /*    padding-left: 0;*/
+    /*}*/
 
     .portfolio__filter li {
         padding: 6px 15px;
@@ -2276,6 +2300,10 @@ section {
 }
 /* Wide Mobile = 480px */
 @media only screen and (max-width: 767px) {
+    .header__logo img {
+        width: 30%;
+    }
+
     .services__title {
         margin-bottom: 50px;
     }
@@ -2337,9 +2365,9 @@ section {
         margin-bottom: 50px;
     }
 
-    .about__text {
-        padding-left: 0;
-    }
+    /*.about__text {*/
+    /*    padding-left: 0;*/
+    /*}*/
 
     .slicknav_menu {
         background: transparent;
@@ -2379,7 +2407,7 @@ section {
     .slicknav_btn {
         position: absolute;
         right: 10px;
-        top: 26px;
+        top: 18px;
         background: #bd1d1d;
     }
 
@@ -2413,7 +2441,7 @@ section {
     }
 
     .footer__top__social {
-        text-align: left;
+        text-align: center;
         padding-top: 30px;
     }
 

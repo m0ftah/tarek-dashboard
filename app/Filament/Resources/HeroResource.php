@@ -35,7 +35,6 @@ class HeroResource extends Resource
                             ->required()
                             ->maxLength(255),
                         Forms\Components\TextInput::make('button_link')
-                            ->url()
                             ->maxLength(255),
                     ])
                     ->columns(2),

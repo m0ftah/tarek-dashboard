@@ -110,8 +110,8 @@
     <div class="row">
         <div class="col-lg-12">
             <div class=" center-title">
-                <span>Our Portfolio</span>
-                <h2>Recent Work</h2>
+                <span data-translate="work_subtitle">Our Portfolio</span>
+                <h2 data-translate="work_title">Recent Work</h2>
             </div>
         </div>
     </div>
@@ -162,7 +162,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title">
-                    <h3 data-translate="color_grading_interactive">Interactive Comparisons</h3>
+                    <h2 data-translate="color_grading_interactive">Interactive Comparisons</h2>
                 </div>
             </div>
         </div>
