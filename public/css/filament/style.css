@@ -714,10 +714,22 @@ section {
 [dir="rtl"] .header__nav__social {
     text-align: right;
     order: -1;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* [dir="rtl"] .header__nav__social:before {
+    left: auto;
+    right: 0;
+} */
+
+[dir="rtl"] .header__nav__social a:last-child {
+    margin-left: 50px;
+    margin-right: 0;
 }
 
 [dir="rtl"] .language-toggle {
-    margin-right: 0;
+    /* margin-right: 20px; */
     margin-left: 0;
     order: 1;
 }

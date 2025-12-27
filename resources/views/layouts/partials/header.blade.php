@@ -22,7 +22,7 @@
                             <li><a href="{{ route('home') }}#contact" data-translate="nav_contact">Contact</a></li>
                         </ul>
                     </nav>
-                    <div class="header__nav__social" style="display: block !important; visibility: visible !important;">
+                    <div class="header__nav__social" style="visibility: visible !important;">
                         <div class="language-toggle">
                             <button id="lang-toggle" class="lang-btn">العربية</button>
                         </div>
