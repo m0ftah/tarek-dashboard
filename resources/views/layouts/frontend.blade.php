@@ -6,9 +6,10 @@
     <meta name="keywords" content="Videograph, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'Videograph | Template')</title>
-    
+
     @php
         $favicon = \App\Models\Setting::get('favicon');
     @endphp
@@ -22,6 +23,8 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{ asset('css/filament/bootstrap.min.css') }}" type="text/css">

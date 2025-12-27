@@ -99,7 +99,8 @@ class SongResource extends Resource
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ])
-            ->defaultSort('order');
+            ->defaultSort('order')
+            ->reorderable('order');
     }
 
     public static function getPages(): array

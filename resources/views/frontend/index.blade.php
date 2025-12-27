@@ -179,9 +179,9 @@
             </div>
             @if($grading->title)
             <div class="griding-card-info">
-                <h4>{{ $grading->title }}</h4>
+                <h4 class="grading-title" data-title-en="{{ $grading->title }}" data-title-ar="{{ $grading->title_ar ?? $grading->title }}">{{ $grading->title }}</h4>
                 @if($grading->description)
-                <p>{{ $grading->description }}</p>
+                <p class="grading-description" data-desc-en="{{ $grading->description }}" data-desc-ar="{{ $grading->description_ar ?? $grading->description }}">{{ $grading->description }}</p>
                 @endif
             </div>
             @endif
@@ -237,9 +237,9 @@
                         <a href="{{ $song->video_url }}" class="play-btn video-popup"><i class="fa fa-play"></i></a>
                     </div>
                     <div class="portfolio__item__text">
-                        <h4>{{ $song->title }}</h4>
+                        <h4 class="song-title" data-title-en="{{ $song->title }}" data-title-ar="{{ $song->title_ar ?? $song->title }}">{{ $song->title }}</h4>
                         @if($song->description)
-                        <p>{{ $song->description }}</p>
+                        <p class="song-description" data-desc-en="{{ $song->description }}" data-desc-ar="{{ $song->description_ar ?? $song->description }}">{{ $song->description }}</p>
                         @endif
                     </div>
                 </div>

@@ -54,7 +54,13 @@ const translations = {
         footer_about_title: "About us",
         footer_who_we_are: "Who we are",
         footer_our_work: "Our work",
-        footer_newsletter: "Newsletter"
+        footer_newsletter: "Newsletter",
+        footer_contact: "Contact",
+        footer_email: "Email",
+        footer_phone: "Phone",
+        footer_newsletter_text: "Subscribe to our newsletter for updates.",
+        footer_email_placeholder: "Email",
+        footer_copyright: "Copyright © {year} All rights reserved"
     },
     ar: {
         // Navigation
@@ -110,7 +116,13 @@ const translations = {
         footer_about_title: "من نحن",
         footer_who_we_are: "من نحن",
         footer_our_work: "أعمالنا",
-        footer_newsletter: "النشرة الإخبارية"
+        footer_newsletter: "النشرة الإخبارية",
+        footer_contact: "اتصل بنا",
+        footer_email: "البريد الإلكتروني",
+        footer_phone: "الهاتف",
+        footer_newsletter_text: "اشترك في نشرتنا الإخبارية للحصول على التحديثات.",
+        footer_email_placeholder: "البريد الإلكتروني",
+        footer_copyright: "حقوق النشر © {year} جميع الحقوق محفوظة"
     }
 };
 
@@ -193,6 +205,83 @@ function updateLanguage() {
             desc.textContent = descAr;
         } else if (currentLanguage === 'en' && descEn) {
             desc.textContent = descEn;
+        }
+    });
+
+    // Update song titles and descriptions based on language
+    const songTitles = document.querySelectorAll('.song-title');
+    songTitles.forEach(title => {
+        const titleEn = title.getAttribute('data-title-en');
+        const titleAr = title.getAttribute('data-title-ar');
+        if (currentLanguage === 'ar' && titleAr) {
+            title.textContent = titleAr;
+        } else if (currentLanguage === 'en' && titleEn) {
+            title.textContent = titleEn;
+        }
+    });
+
+    const songDescriptions = document.querySelectorAll('.song-description');
+    songDescriptions.forEach(desc => {
+        const descEn = desc.getAttribute('data-desc-en');
+        const descAr = desc.getAttribute('data-desc-ar');
+        if (currentLanguage === 'ar' && descAr) {
+            desc.textContent = descAr;
+        } else if (currentLanguage === 'en' && descEn) {
+            desc.textContent = descEn;
+        }
+    });
+
+    // Update color grading titles and descriptions based on language
+    const gradingTitles = document.querySelectorAll('.grading-title');
+    gradingTitles.forEach(title => {
+        const titleEn = title.getAttribute('data-title-en');
+        const titleAr = title.getAttribute('data-title-ar');
+        if (currentLanguage === 'ar' && titleAr) {
+            title.textContent = titleAr;
+        } else if (currentLanguage === 'en' && titleEn) {
+            title.textContent = titleEn;
+        }
+    });
+
+    const gradingDescriptions = document.querySelectorAll('.grading-description');
+    gradingDescriptions.forEach(desc => {
+        const descEn = desc.getAttribute('data-desc-en');
+        const descAr = desc.getAttribute('data-desc-ar');
+        if (currentLanguage === 'ar' && descAr) {
+            desc.textContent = descAr;
+        } else if (currentLanguage === 'en' && descEn) {
+            desc.textContent = descEn;
+        }
+    });
+
+    // Update footer about description based on language
+    const footerAboutDescriptions = document.querySelectorAll('.footer-about-description');
+    footerAboutDescriptions.forEach(desc => {
+        const descEn = desc.getAttribute('data-desc-en');
+        const descAr = desc.getAttribute('data-desc-ar');
+        if (currentLanguage === 'ar' && descAr) {
+            desc.textContent = descAr;
+        } else if (currentLanguage === 'en' && descEn) {
+            desc.textContent = descEn;
+        }
+    });
+
+    // Update email placeholder
+    const emailPlaceholders = document.querySelectorAll('[data-translate-placeholder]');
+    emailPlaceholders.forEach(input => {
+        const key = input.getAttribute('data-translate-placeholder');
+        if (translations[currentLanguage][key]) {
+            input.placeholder = translations[currentLanguage][key];
+        }
+    });
+
+    // Update copyright text
+    const copyrightElements = document.querySelectorAll('[data-translate="footer_copyright"]');
+    copyrightElements.forEach(element => {
+        const year = new Date().getFullYear();
+        const copyrightText = translations[currentLanguage]['footer_copyright'];
+        if (copyrightText) {
+            element.textContent = copyrightText.replace('{year}', year);
         }
     });
 

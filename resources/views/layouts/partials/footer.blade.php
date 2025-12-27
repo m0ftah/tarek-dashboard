@@ -37,27 +37,27 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="footer__option__item">
-                        <h5>About us</h5>
-                        <p>{{ $settings['about_description'] ?? 'Formed in 2006 by Matt Hobbs and Cael Jones, Videoprah is an award-winning, full-service production company specializing.' }}</p>
+                        <h5 data-translate="footer_about_title">About us</h5>
+                        <p class="footer-about-description" data-desc-en="{{ $settings['about_description'] ?? 'Formed in 2006 by Matt Hobbs and Cael Jones, Videoprah is an award-winning, full-service production company specializing.' }}" data-desc-ar="{{ $settings['about_description_ar'] ?? $settings['about_description'] ?? 'Formed in 2006 by Matt Hobbs and Cael Jones, Videoprah is an award-winning, full-service production company specializing.' }}">{{ $settings['about_description'] ?? 'Formed in 2006 by Matt Hobbs and Cael Jones, Videoprah is an award-winning, full-service production company specializing.' }}</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="footer__option__item">
-                        <h5>Contact</h5>
+                        <h5 data-translate="footer_contact">Contact</h5>
                         @if($settings['contact_email'] ?? '')
-                        <p>Email: {{ $settings['contact_email'] }}</p>
+                        <p><span data-translate="footer_email">Email</span>: {{ $settings['contact_email'] }}</p>
                         @endif
                         @if($settings['contact_phone'] ?? '')
-                        <p>Phone: {{ $settings['contact_phone'] }}</p>
+                        <p><span data-translate="footer_phone">Phone</span>: {{ $settings['contact_phone'] }}</p>
                         @endif
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12">
                     <div class="footer__option__item">
-                        <h5>Newsletter</h5>
-                        <p>Subscribe to our newsletter for updates.</p>
+                        <h5 data-translate="footer_newsletter">Newsletter</h5>
+                        <p data-translate="footer_newsletter_text">Subscribe to our newsletter for updates.</p>
                         <form action="#">
-                            <input type="text" placeholder="Email">
+                            <input type="text" placeholder="" data-translate-placeholder="footer_email_placeholder">
                             <button type="submit"><i class="fa fa-send"></i></button>
                         </form>
                     </div>
@@ -67,7 +67,7 @@
         <div class="footer__copyright">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <p class="footer__copyright__text">Copyright &copy; {{ date('Y') }} All rights reserved</p>
+                    <p class="footer__copyright__text" data-translate="footer_copyright">Copyright &copy; {{ date('Y') }} All rights reserved</p>
                 </div>
             </div>
         </div>
