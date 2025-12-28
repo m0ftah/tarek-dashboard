@@ -328,7 +328,7 @@ section {
   Helper CSS
 -----------------------*/
 .section-title {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     margin-top: 20px;
 }
 .center-title {
@@ -818,6 +818,7 @@ section {
 }
 
 .hero__item {
+    padding-top: 255px;
     height: 100%;
 }
 [dir="rtl"] .hero__text {
@@ -934,6 +935,13 @@ section {
     .partners__content h2 {
         font-size: 36px;
     }
+    .header__logo img{
+        width: 30%;
+    }
+    .hero__item {
+        padding-top: 400px;
+        height: 100%;
+    }
 
     .partners__logos {
         padding-left: 0;
@@ -943,7 +951,7 @@ section {
 
 @media (max-width: 767px) {
     .partners {
-        padding: 60px 0;
+        padding: 20px 20px;
     }
 
     .partners__content h2 {
@@ -1332,11 +1340,11 @@ section {
 .footer__option__item h5 {
     color: #ffffff;
     font-weight: 700;
-    margin-bottom: 35px;
+    margin-bottom: 10px;
 }
 .footer__option__item p {
-    font-weight: 300;
-    margin-bottom: 20px;
+    font-weight: 400;
+    margin-bottom: 10px;
 }
 .footer__option__item .read__more {
     font-size: 16px;
@@ -2222,13 +2230,16 @@ section {
     .header__nav__menu {
         margin-right: 25px;
     }
-
+    .container {
+        max-width: 2000px;
+    }
     .header__nav__menu ul li {
         margin-right: 25px;
     }
 
     .header__nav__social {
-        padding-left: 25px;
+        padding-left: 0;
+        gap: 10px;
     }
 
     .counter__item::before {
@@ -2356,7 +2367,7 @@ section {
     .slicknav_btn {
         position: absolute;
         right: 10px;
-        top: 26px;
+        top: 35px;
         background: transparent;
     }
 
@@ -2370,6 +2381,10 @@ section {
 }
 /* Wide Mobile = 480px */
 @media only screen and (max-width: 767px) {
+    .hero__item {
+        padding-top: 400px;
+        height: 100%;
+    }
     .header__logo img {
         width: 30%;
     }
@@ -2477,7 +2492,7 @@ section {
     .slicknav_btn {
         position: absolute;
         right: 10px;
-        top: 18px;
+        top: 22px;
         background: transparent;
     }
 
@@ -2606,7 +2621,7 @@ section {
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    padding: 60px 20px;
+    padding: 30px 20px;
 
     background: #0c0c0c;
 }

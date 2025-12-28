@@ -14,7 +14,7 @@
     }
 @endphp
 <section class="hero set-bg" data-setbg="{{ $heroImage }}" style="background-image: url('{{ $heroImage }}') !important; background-size: cover !important; background-position: center center !important; background-repeat: no-repeat !important; height: 684px !important; background-color: transparent !important;">
-    <div class="hero__item" style="padding-top: 255px; height: 100%;">
+    <div class="hero__item">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">

@@ -55,12 +55,12 @@
                     </div>
                     <div class="col-lg-4 col-md-12">
                         <div class="footer__option__item">
-                            <h5 data-translate="footer_newsletter">Newsletter</h5>
-                            <p data-translate="footer_newsletter_text">Subscribe to our newsletter for updates.</p>
-                            <form action="#">
-                                <input type="text" placeholder="" data-translate-placeholder="footer_email_placeholder">
-                                <button type="submit"><i class="fa fa-send"></i></button>
-                            </form>
+                            <h5 data-translate="footer_newsletter">Location</h5>
+                            <p data-translate="footer_newsletter_text">Libya, Benghazi</p>
+{{--                            <form action="#">--}}
+{{--                                <input type="text" placeholder="" data-translate-placeholder="footer_email_placeholder">--}}
+{{--                                <button type="submit"><i class="fa fa-send"></i></button>--}}
+{{--                            </form>--}}
                         </div>
                     </div>
                 </div>

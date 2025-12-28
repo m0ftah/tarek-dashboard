@@ -54,11 +54,11 @@ const translations = {
         footer_about_title: "About us",
         footer_who_we_are: "Who we are",
         footer_our_work: "Our work",
-        footer_newsletter: "Newsletter",
+        footer_newsletter: "Location",
         footer_contact: "Contact",
         footer_email: "Email",
         footer_phone: "Phone",
-        footer_newsletter_text: "Subscribe to our newsletter for updates.",
+        footer_newsletter_text: "Libya, Benghazi",
         footer_email_placeholder: "Email",
         footer_copyright: "Copyright © {year} All rights reserved"
     },
@@ -116,11 +116,11 @@ const translations = {
         footer_about_title: "من نحن",
         footer_who_we_are: "من نحن",
         footer_our_work: "أعمالنا",
-        footer_newsletter: "النشرة الإخبارية",
+        footer_newsletter: "العنوان",
         footer_contact: "اتصل بنا",
         footer_email: "البريد الإلكتروني",
         footer_phone: "الهاتف",
-        footer_newsletter_text: "اشترك في نشرتنا الإخبارية للحصول على التحديثات.",
+        footer_newsletter_text: "بنغازي، ليبيا",
         footer_email_placeholder: "البريد الإلكتروني",
         footer_copyright: "حقوق النشر © {year} جميع الحقوق محفوظة"
     }
@@ -294,11 +294,11 @@ function updateLanguage() {
         document.documentElement.setAttribute('lang', 'en');
     }
 
-    // Reinitialize the hero slider with new RTL settings
-    $('.hero__slider').trigger('destroy.owl.carousel');
-    setTimeout(() => {
-        initializeHeroSlider();
-    }, 100);
+    // // Reinitialize the hero slider with new RTL settings
+    // $('.hero__slider').trigger('destroy.owl.carousel');
+    // setTimeout(() => {
+    //     initializeHeroSlider();
+    // }, 100);
 }
 
 function updateLanguageButton() {
