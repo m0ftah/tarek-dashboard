@@ -430,10 +430,15 @@ section {
 }
 
 /* buttons */
+[dir="rtl"] .primary-btn{
+    font-family: 'Cairo', sans-serif;
+}
+[dir="ltr"] .primary-btn{
+    font-family: "Play", sans-serif;
+}
 .primary-btn {
     display: inline-block;
     font-size: 15px;
-    font-family: "Play", sans-serif;
     font-weight: 700;
     padding: 14px 32px 12px;
     color: #ffffff;
@@ -656,9 +661,9 @@ section {
 .header__nav__menu ul li .dropdown li a:after {
     display: none;
 }
+
 .header__nav__menu ul li a {
     font-size: 15px;
-    font-family: "Josefin Sans", sans-serif;
     color: #ffffff;
     display: block;
     text-transform: uppercase;
