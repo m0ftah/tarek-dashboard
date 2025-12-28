@@ -2357,7 +2357,7 @@ section {
         position: absolute;
         right: 10px;
         top: 26px;
-        background: #bd1d1d;
+        background: transparent;
     }
 
     .header .container {
@@ -2478,7 +2478,7 @@ section {
         position: absolute;
         right: 10px;
         top: 18px;
-        background: #bd1d1d;
+        background: transparent;
     }
 
     .header .container {
@@ -2609,6 +2609,15 @@ section {
     padding: 60px 20px;
 
     background: #0c0c0c;
+}
+
+.griding-section .container:first-of-type .section-title {
+    margin-bottom: 20px;
+}
+
+.griding-section .video-wrapper {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .griding-section .section-title h3 {
