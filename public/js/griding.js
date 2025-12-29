@@ -18,11 +18,27 @@ document.addEventListener("DOMContentLoaded", () => {
         // Ensure canvas elements have dimensions
         const viewer = document.getElementById(`viewer${viewerId}`);
         if (viewer) {
-            // Set initial canvas dimensions
-            originalCanvas.width = viewer.clientWidth;
-            originalCanvas.height = viewer.clientHeight;
-            gradedCanvas.width = viewer.clientWidth;
-            gradedCanvas.height = viewer.clientHeight;
+            // Use getBoundingClientRect for accurate dimensions on real devices
+            const rect = viewer.getBoundingClientRect();
+            const actualWidth = Math.floor(rect.width);
+            const actualHeight = Math.floor(rect.height);
+            
+            // Set canvas dimensions to match actual content area
+            originalCanvas.width = Math.max(actualWidth, 1);
+            originalCanvas.height = Math.max(actualHeight, 1);
+            gradedCanvas.width = Math.max(actualWidth, 1);
+            gradedCanvas.height = Math.max(actualHeight, 1);
+            
+            // Set explicit CSS dimensions to prevent overflow
+            originalCanvas.style.width = `${actualWidth}px`;
+            originalCanvas.style.height = `${actualHeight}px`;
+            originalCanvas.style.maxWidth = '100%';
+            originalCanvas.style.boxSizing = 'border-box';
+            
+            gradedCanvas.style.width = `${actualWidth}px`;
+            gradedCanvas.style.height = `${actualHeight}px`;
+            gradedCanvas.style.maxWidth = '100%';
+            gradedCanvas.style.boxSizing = 'border-box';
         }
 
         const loadImage = (src) =>
@@ -45,9 +61,30 @@ document.addEventListener("DOMContentLoaded", () => {
             // Helper function to draw the image with "cover" behavior
             const drawCover = (ctx, img) => {
                 const canvas = ctx.canvas;
-                // Set canvas resolution to match its display size for high quality
-                canvas.width = canvas.clientWidth;
-                canvas.height = canvas.clientHeight;
+                // Get the viewer to calculate actual dimensions
+                const viewer = document.getElementById(`viewer${viewerId}`);
+                let actualWidth, actualHeight;
+                
+                if (viewer) {
+                    // Use getBoundingClientRect for more accurate dimensions on real devices
+                    const rect = viewer.getBoundingClientRect();
+                    actualWidth = Math.floor(rect.width);
+                    actualHeight = Math.floor(rect.height);
+                } else {
+                    // Fallback to client dimensions
+                    actualWidth = canvas.clientWidth || 1;
+                    actualHeight = canvas.clientHeight || 1;
+                }
+                
+                // Set canvas resolution to match display size
+                canvas.width = Math.max(actualWidth, 1);
+                canvas.height = Math.max(actualHeight, 1);
+                
+                // Ensure CSS size matches to prevent overflow
+                canvas.style.width = `${actualWidth}px`;
+                canvas.style.height = `${actualHeight}px`;
+                canvas.style.maxWidth = '100%';
+                canvas.style.boxSizing = 'border-box';
 
                 const canvasRatio = canvas.width / canvas.height;
                 const imgRatio = img.naturalWidth / img.naturalHeight;
