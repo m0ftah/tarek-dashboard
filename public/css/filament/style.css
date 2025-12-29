@@ -75,7 +75,7 @@ body {
     -webkit-font-smoothing: antialiased;
     background-color: #0c0c0c !important;
     background: #0c0c0c !important;
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
     max-width: 100vw;
 }
 
@@ -2351,14 +2351,11 @@ section {
         padding: 0;
         display: block;
     }
-
     .slicknav_nav ul {
         margin: 0;
         padding: 10px 30px;
     }
-
-    .slicknav_nav .slicknav_row,
-    .slicknav_nav a {
+    .slicknav_nav .slicknav_row .slicknav_nav a {
         padding: 7px 0;
         margin: 0;
         color: #ffffff;
@@ -2402,7 +2399,7 @@ section {
         overflow-x: hidden !important;
         max-width: 100vw !important;
     }
-    
+
     .griding-section .container {
         padding-left: 15px !important;
         padding-right: 15px !important;
@@ -2412,7 +2409,7 @@ section {
         margin-left: auto;
         margin-right: auto;
     }
-    
+
     .griding-container {
         grid-template-columns: repeat(1, 1fr) !important;
         gap: 15px;
@@ -2423,7 +2420,7 @@ section {
         box-sizing: border-box !important;
         overflow: hidden;
     }
-    
+
     .griding-section {
         padding: 30px 0 !important;
         gap: 1.5rem;
@@ -2432,7 +2429,7 @@ section {
         box-sizing: border-box !important;
         overflow-x: hidden !important;
     }
-    
+
     .griding-card {
         padding: 12px !important;
         width: 100% !important;
@@ -2440,7 +2437,7 @@ section {
         box-sizing: border-box !important;
         margin: 0 !important;
     }
-    
+
     .griding-viewer {
         min-height: 250px;
         width: 100% !important;
@@ -2448,13 +2445,13 @@ section {
         box-sizing: border-box !important;
         overflow: hidden;
     }
-    
+
     .griding-handle {
         width: 24px;
         height: 24px;
         font-size: 14px;
     }
-    
+
     canvas.griding-layer {
         max-width: 100% !important;
         width: 100% !important;
@@ -2543,8 +2540,17 @@ section {
         padding: 10px 30px;
     }
 
-    .slicknav_nav .slicknav_row,
+    [dir="ltr"] .slicknav_nav .slicknav_row,
     .slicknav_nav a {
+        padding: 7px 0;
+        margin: 0;
+        color: #ffffff;
+        font-weight: 600;
+    }
+
+    [dir="rtl"] .slicknav_nav .slicknav_row,
+    .slicknav_nav a {
+        text-align: right;
         padding: 7px 0;
         margin: 0;
         color: #ffffff;
@@ -2680,7 +2686,7 @@ section {
     .blog__details__quote {
         padding: 30px 40px 35px 35px;
     }
-    
+
     .griding-container {
         gap: 12px;
         padding: 0;
@@ -2689,7 +2695,7 @@ section {
         max-width: 100%;
         box-sizing: border-box;
     }
-    
+
     .griding-section {
         padding: 20px 0;
         gap: 1rem;
@@ -2698,38 +2704,38 @@ section {
         box-sizing: border-box;
         overflow-x: hidden;
     }
-    
+
     .griding-section .container {
         padding-left: 10px;
         padding-right: 10px;
         max-width: 100%;
         box-sizing: border-box;
     }
-    
+
     .griding-card {
         padding: 10px;
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
     }
-    
+
     .griding-viewer {
         min-height: 200px;
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
     }
-    
+
     .griding-handle {
         width: 20px;
         height: 20px;
         font-size: 12px;
     }
-    
+
     .griding-card-info h4 {
         font-size: 18px;
     }
-    
+
     .griding-card-info p {
         font-size: 14px;
     }
