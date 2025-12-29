@@ -46,5 +46,8 @@
             </div>
         </div>
         <div id="mobile-menu-wrap"></div>
+        <div class="mobile-lang-toggle">
+            <button id="lang-toggle-mobile" class="lang-btn-mobile"><i class="fa fa-globe"></i> <span class="lang-text">EN</span></button>
+        </div>
     </div>
 </header>

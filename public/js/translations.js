@@ -131,19 +131,36 @@ let currentLanguage = 'en';
 
 document.addEventListener('DOMContentLoaded', function() {
     const langToggle = document.getElementById('lang-toggle');
+    const langToggleMobile = document.getElementById('lang-toggle-mobile');
 
     // Load saved language preference
     const savedLang = localStorage.getItem('language') || 'en';
     currentLanguage = savedLang;
     updateLanguage();
 
-    // Toggle language on button click
-    langToggle.addEventListener('click', function() {
+    // Function to toggle language
+    function toggleLanguage() {
         currentLanguage = currentLanguage === 'en' ? 'ar' : 'en';
         localStorage.setItem('language', currentLanguage);
         updateLanguage();
         updateLanguageButton();
-    });
+    }
+
+    // Toggle language on desktop button click
+    if (langToggle) {
+        langToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            toggleLanguage();
+        });
+    }
+
+    // Toggle language on mobile button click
+    if (langToggleMobile) {
+        langToggleMobile.addEventListener('click', function(e) {
+            e.preventDefault();
+            toggleLanguage();
+        });
+    }
 
     // Update button text
     updateLanguageButton();
@@ -348,5 +365,22 @@ function updateLanguage() {
 
 function updateLanguageButton() {
     const langToggle = document.getElementById('lang-toggle');
-    langToggle.textContent = currentLanguage === 'en' ? 'العربية' : 'English';
+    const langToggleMobile = document.getElementById('lang-toggle-mobile');
+    
+    // Desktop button - keep original text
+    const desktopButtonText = currentLanguage === 'en' ? 'العربية' : 'English';
+    if (langToggle) {
+        langToggle.textContent = desktopButtonText;
+    }
+    
+    // Mobile button - show AR/EN with icon
+    const mobileButtonText = currentLanguage === 'en' ? 'EN' : 'AR';
+    if (langToggleMobile) {
+        const langText = langToggleMobile.querySelector('.lang-text');
+        if (langText) {
+            langText.textContent = mobileButtonText;
+        } else {
+            langToggleMobile.innerHTML = '<i class="fa fa-globe"></i> <span class="lang-text">' + mobileButtonText + '</span>';
+        }
+    }
 }
