@@ -14,8 +14,10 @@ class Work extends Model
         'title',
         'title_ar',
         'tags',
+        'tags_ar',
         'image',
         'video_url',
+        'video_icon',
         'size',
         'is_active',
         'order',
@@ -23,7 +25,9 @@ class Work extends Model
 
     protected $casts = [
         'is_active' => 'boolean',
+        'video_icon' => 'boolean',
         'tags' => 'array',
+        'tags_ar' => 'array',
     ];
 
     public function scopeActive($query)

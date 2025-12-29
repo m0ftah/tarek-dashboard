@@ -33,8 +33,10 @@ class WorkResource extends Resource
                             ->label('Title (Arabic)')
                             ->maxLength(255),
                         Forms\Components\TagsInput::make('tags')
-                            ->placeholder('Add tags')
-                            ->separator(','),
+                            ->placeholder('Add tags'),
+                        Forms\Components\TagsInput::make('tags_ar')
+                            ->label('Tags (Arabic)')
+                            ->placeholder('Add tags in Arabic'),
                     ])
                     ->columns(2),
 
@@ -48,6 +50,9 @@ class WorkResource extends Resource
                             ->url()
                             ->required()
                             ->placeholder('https://www.youtube.com/watch?v=...'),
+                        Forms\Components\Toggle::make('video_icon')
+                            ->label('Video Icon')
+                            ->default(false),
                     ])
                     ->columns(2),
 
@@ -87,6 +92,10 @@ class WorkResource extends Resource
                 Tables\Columns\TextColumn::make('order')
                     ->sortable(),
                 Tables\Columns\IconColumn::make('is_active')
+                    ->boolean()
+                    ->sortable(),
+                Tables\Columns\IconColumn::make('video_icon')
+                    ->label('Video Icon')
                     ->boolean()
                     ->sortable(),
             ])

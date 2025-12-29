@@ -173,6 +173,18 @@ function updateLanguage() {
         }
     });
 
+    // Update work titles based on language
+    const workTitles = document.querySelectorAll('.work-title');
+    workTitles.forEach(title => {
+        const titleEn = title.getAttribute('data-title-en');
+        const titleAr = title.getAttribute('data-title-ar');
+        if (currentLanguage === 'ar' && titleAr) {
+            title.textContent = titleAr;
+        } else if (currentLanguage === 'en' && titleEn) {
+            title.textContent = titleEn;
+        }
+    });
+
     // Update service titles and descriptions based on language
     const serviceTitles = document.querySelectorAll('.service-title');
     serviceTitles.forEach(title => {
@@ -282,6 +294,39 @@ function updateLanguage() {
         const copyrightText = translations[currentLanguage]['footer_copyright'];
         if (copyrightText) {
             element.textContent = copyrightText.replace('{year}', year);
+        }
+    });
+
+    // Update work tags based on language
+    const workTagsLists = document.querySelectorAll('.work-tags');
+    workTagsLists.forEach(tagsList => {
+        const tagsEnJson = tagsList.getAttribute('data-tags-en');
+        const tagsArJson = tagsList.getAttribute('data-tags-ar');
+        
+        try {
+            const tagsEn = tagsEnJson ? JSON.parse(tagsEnJson) : [];
+            const tagsAr = tagsArJson ? JSON.parse(tagsArJson) : [];
+            
+            let tagsToShow = [];
+            if (currentLanguage === 'ar' && tagsAr && tagsAr.length > 0) {
+                tagsToShow = tagsAr;
+            } else if (currentLanguage === 'en' && tagsEn && tagsEn.length > 0) {
+                tagsToShow = tagsEn;
+            } else {
+                tagsToShow = tagsEn.length > 0 ? tagsEn : tagsAr;
+            }
+            
+            // Clear existing list items
+            tagsList.innerHTML = '';
+            
+            // Add new list items
+            tagsToShow.forEach(tag => {
+                const li = document.createElement('li');
+                li.textContent = tag;
+                tagsList.appendChild(li);
+            });
+        } catch (e) {
+            console.error('Error parsing tags:', e);
         }
     });
 

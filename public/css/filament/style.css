@@ -123,7 +123,7 @@ p {
 }
 
 img {
-    max-width: 100%;
+    max-width: 85%;
 }
 
 input:focus,
@@ -1015,14 +1015,17 @@ section {
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.7);
     border-radius: 50%;
+    background: transparent;
 }
 
 .grid-sizer {
     width: calc(16.67% - 10px);
 }
-
+[dir="rtl"] .work__item__hover{
+    text-align: right;
+}
 .work__item__hover {
-    background: rgba(0, 0, 0, 0.5);
+    background: #0a0a0a;
     position: absolute;
     left: 0;
     bottom: -300px;
@@ -1041,18 +1044,27 @@ section {
     color: #adadad;
     list-style: none;
     font-size: 16px;
-    margin-right: 23px;
     position: relative;
     display: inline-block;
 }
+[dir="ltr"] .work__item__hover ul li{
+    margin-right: 23px;
+}
+[dir="rtl"] .work__item__hover ul li{
+    margin-left: 23px;
+}
 .work__item__hover ul li:after {
     position: absolute;
-    right: -18px;
+    inset-inline-end: -18px; /* Targets the 'end' side regardless of direction */
     top: 1px;
     content: "/";
 }
-.work__item__hover ul li:last-child {
+
+[dir="ltr"] .work__item__hover ul li:last-child {
     margin-right: 0;
+}
+[dir="rtl"] .work__item__hover ul li:last-child {
+    margin-left: 0;
 }
 .work__item__hover ul li:last-child:after {
     display: none;
@@ -1600,7 +1612,7 @@ section {
     position: relative;
     height: 70px;
     width: 70px;
-    line-height: 70px;
+    line-height: 65px;
     text-align: center;
 }
 .services__item__icon:after {
@@ -2260,6 +2272,9 @@ section {
 }
 /* Tablet Device = 768px */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .griding-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
     .services__title {
         margin-bottom: 50px;
     }
@@ -2381,6 +2396,9 @@ section {
 }
 /* Wide Mobile = 480px */
 @media only screen and (max-width: 767px) {
+    .griding-container {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
     .hero__item {
         padding-top: 400px;
         height: 100%;
@@ -2735,9 +2753,7 @@ canvas.griding-layer {
 }
 
 @media (max-width: 980px) {
-    .griding-container {
-        grid-template-columns: 1fr;
-    }
+
 }
 
 /* Video Controls Styling - More Specific Rules */
