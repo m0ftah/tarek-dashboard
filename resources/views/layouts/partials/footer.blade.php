@@ -8,7 +8,7 @@
                             @php
                                 $logo = \App\Models\Setting::get('logo');
                             @endphp
-                            <a href="{{ route('home') }}">
+                            <a href="{{ route('home') }}#">
                                 <img src="{{ $logo ? asset('storage/' . $logo) : asset('img/logo.png') }}" alt="{{ $settings['site_name'] ?? 'Logo' }}">
                             </a>
                         </div>

@@ -6,7 +6,7 @@
                     @php
                         $logo = \App\Models\Setting::get('logo');
                     @endphp
-                    <a href="{{ route('home') }}">
+                    <a href="{{ route('home') }}#">
                         <img src="{{ $logo ? asset('storage/' . $logo) : asset('img/logo.png') }}" alt="{{ $settings['site_name'] ?? 'Logo' }}">
                     </a>
                 </div>
@@ -15,7 +15,7 @@
                 <div class="header__nav__option">
                     <nav class="header__nav__menu mobile-menu">
                         <ul>
-                            <li class="active"><a href="{{ route('home') }}" data-translate="nav_home">Home</a></li>
+                            <li class="active"><a href="{{ route('home')}}#" data-translate="nav_home">Home</a></li>
                             <li><a href="{{ route('home') }}#about" data-translate="nav_about">About</a></li>
                             <li><a href="{{ route('home') }}#portfolio" data-translate="nav_portfolio">Portfolio</a></li>
                             <li><a href="{{ route('home') }}#services" data-translate="nav_services">Services</a></li>

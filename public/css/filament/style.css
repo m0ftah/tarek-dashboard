@@ -2351,11 +2351,14 @@ section {
         padding: 0;
         display: block;
     }
+
     .slicknav_nav ul {
         margin: 0;
         padding: 10px 30px;
     }
-    .slicknav_nav .slicknav_row .slicknav_nav a {
+
+    .slicknav_nav .slicknav_row,
+    .slicknav_nav a {
         padding: 7px 0;
         margin: 0;
         color: #ffffff;
@@ -2540,21 +2543,19 @@ section {
         padding: 10px 30px;
     }
 
-    [dir="ltr"] .slicknav_nav .slicknav_row,
+    .slicknav_nav .slicknav_row,
     .slicknav_nav a {
         padding: 7px 0;
         margin: 0;
         color: #ffffff;
         font-weight: 600;
+        text-align: left; /* Default LTR alignment */
     }
 
+    /* RTL alignment for Arabic */
     [dir="rtl"] .slicknav_nav .slicknav_row,
-    .slicknav_nav a {
+    [dir="rtl"] .slicknav_nav a {
         text-align: right;
-        padding: 7px 0;
-        margin: 0;
-        color: #ffffff;
-        font-weight: 600;
     }
 
     .slicknav_nav .slicknav_row:hover {
