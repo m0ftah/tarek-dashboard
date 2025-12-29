@@ -161,6 +161,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- INITIALIZE ALL SLIDERS ---
     const viewers = document.querySelectorAll(".griding-viewer");
+    const viewerData = [];
+    
     viewers.forEach((viewer) => {
         initComparisonSlider(viewer);
 
@@ -169,6 +171,13 @@ document.addEventListener("DOMContentLoaded", () => {
         // Get image paths from data attributes instead of hardcoded paths
         const originalSrc = viewer.getAttribute("data-before");
         const gradedSrc = viewer.getAttribute("data-after");
+
+        // Store viewer data for resize handling
+        viewerData.push({
+            viewerId,
+            originalSrc,
+            gradedSrc,
+        });
 
         // Load images with the correct sources
         if (originalSrc && gradedSrc) {
@@ -179,5 +188,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 gradedSrc,
             });
         }
+    });
+
+    // Handle window resize to redraw canvases
+    let resizeTimeout;
+    window.addEventListener("resize", () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            viewerData.forEach(({ viewerId, originalSrc, gradedSrc }) => {
+                if (originalSrc && gradedSrc) {
+                    loadAndDrawImages(viewerId, originalSrc, gradedSrc);
+                }
+            });
+        }, 250);
     });
 });
