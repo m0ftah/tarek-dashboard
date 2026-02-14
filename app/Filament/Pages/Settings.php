@@ -30,6 +30,9 @@ class Settings extends Page
             'about_title_ar' => Setting::get('about_title_ar', 'من نحن؟'),
             'about_description' => Setting::get('about_description'),
             'about_description_ar' => Setting::get('about_description_ar'),
+            'about_image_1' => Setting::get('about_image_1'),
+            'about_image_2' => Setting::get('about_image_2'),
+            'about_image_3' => Setting::get('about_image_3'),
             'services_title' => Setting::get('services_title', 'What We do?'),
             'services_title_ar' => Setting::get('services_title_ar', 'ماذا نفعل؟'),
             'services_description' => Setting::get('services_description'),
@@ -87,6 +90,27 @@ class Settings extends Page
                                 Forms\Components\Textarea::make('about_description_ar')
                                     ->label('Description (Arabic)')
                                     ->rows(4),
+                                Forms\Components\FileUpload::make('about_image_1')
+                                    ->label('About Image 1 (large, left)')
+                                    ->image()
+                                    ->directory('settings/about')
+                                    ->imageEditor()
+                                    ->maxSize(2048)
+                                    ->columnSpanFull(),
+                                Forms\Components\FileUpload::make('about_image_2')
+                                    ->label('About Image 2 (top right)')
+                                    ->image()
+                                    ->directory('settings/about')
+                                    ->imageEditor()
+                                    ->maxSize(2048)
+                                    ->columnSpanFull(),
+                                Forms\Components\FileUpload::make('about_image_3')
+                                    ->label('About Image 3 (bottom right)')
+                                    ->image()
+                                    ->directory('settings/about')
+                                    ->imageEditor()
+                                    ->maxSize(2048)
+                                    ->columnSpanFull(),
                             ]),
 
                         Forms\Components\Tabs\Tab::make('Services Section')

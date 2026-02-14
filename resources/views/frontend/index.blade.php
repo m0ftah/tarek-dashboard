@@ -44,17 +44,17 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="about__pic__item about__pic__item--large set-bg"
-                                     data-setbg="{{ asset('img/about/about-1.jpg') }}"></div>
+                                     data-setbg="{{ $settings['about_image_1'] ? asset('storage/' . $settings['about_image_1']) : asset('img/about/about-1.jpg') }}"></div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="about__pic__item set-bg"
-                                             data-setbg="{{ asset('img/about/about-2.jpg') }}"></div>
+                                             data-setbg="{{ $settings['about_image_2'] ? asset('storage/' . $settings['about_image_2']) : asset('img/about/about-2.jpg') }}"></div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="about__pic__item set-bg"
-                                             data-setbg="{{ asset('img/about/about-3.jpg') }}"></div>
+                                             data-setbg="{{ $settings['about_image_3'] ? asset('storage/' . $settings['about_image_3']) : asset('img/about/about-3.jpg') }}"></div>
                                     </div>
                                 </div>
                             </div>
