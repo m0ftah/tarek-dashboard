@@ -60,11 +60,10 @@ class WorkResource extends Resource
                     ->schema([
                         Forms\Components\Select::make('size')
                             ->options([
-                                'small' => 'Small',
                                 'wide' => 'Wide',
                                 'large' => 'Large',
                             ])
-                            ->default('small')
+                            ->default('large')
                             ->required(),
                         Forms\Components\TextInput::make('order')
                             ->numeric()

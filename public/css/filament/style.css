@@ -983,7 +983,8 @@ section {
 }
 
 .work__item {
-    height: 311px !important;
+    height: auto !important;
+    
     width: calc(16.67% - 10px);
     margin-right: 10px;
     margin-bottom: 10px;
@@ -1004,12 +1005,14 @@ section {
     bottom: 0;
 }
 .work__item.large__item {
-    height: 633px !important;
+    height: auto !important;
+    aspect-ratio: 9 / 16;
     width: calc(33.33% - 10px);
 }
 .work__item.wide__item {
+    height: auto !important;
+    aspect-ratio: 16 / 9;
     width: calc(33.33% - 10px);
-    height: 311px !important;
 }
 .work__item .play-btn {
     display: inline-block;
