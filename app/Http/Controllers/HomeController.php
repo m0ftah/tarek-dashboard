@@ -40,6 +40,8 @@ class HomeController extends Controller
             'about_image_1' => Setting::get('about_image_1'),
             'about_image_2' => Setting::get('about_image_2'),
             'about_image_3' => Setting::get('about_image_3'),
+            'about_video' => Setting::get('about_video'),
+            'about_video_ratio' => Setting::get('about_video_ratio', 'wide'),
             'services_title' => Setting::get('services_title', 'What We do?'),
             'services_title_ar' => Setting::get('services_title_ar', 'ماذا نفعل؟'),
             'services_description' => Setting::get('services_description'),

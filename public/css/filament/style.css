@@ -1525,6 +1525,40 @@ section {
     margin-top: -10px;
 }
 
+/* About section video */
+.about__video {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.about__video__player {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: #000;
+}
+/* Wide: existing style (full width, auto height) - default above */
+/* Large: desktop only - 30% viewport height, centered */
+@media only screen and (min-width: 992px) {
+    .about__video--large {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .about__video--large .about__video__player {
+        height: 30vh;
+        width: auto;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+}
+/* On mobile/tablet, large ratio still shows full width */
+@media only screen and (max-width: 991px) {
+    .about__video--large .about__video__player {
+        width: 100%;
+        height: auto;
+    }
+}
+
 /*---------------------
   Testimonial
 -----------------------*/
@@ -2879,6 +2913,37 @@ section {
 .griding-section .video-wrapper {
     margin-top: 0;
     margin-bottom: 0;
+}
+.griding-section .video-wrapper__player {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: #000;
+}
+/* Griding video: large ratio = 30% viewport height, centered (desktop only) */
+@media only screen and (min-width: 992px) {
+    .griding-section .video-wrapper {
+        max-width: 70%;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .griding-section .video-wrapper--large {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .griding-section .video-wrapper--large .video-wrapper__player {
+        height: 70vh;
+        width: auto;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+}
+@media only screen and (max-width: 991px) {
+    .griding-section .video-wrapper--large .video-wrapper__player {
+        width: 100%;
+        height: auto;
+    }
 }
 
 .griding-section .section-title h3 {

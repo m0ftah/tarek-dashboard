@@ -167,9 +167,9 @@
             </div>
         </div>
 
-        <div class="video-wrapper">
-            <video width="100%" controls>
-                <source src="{{ asset('img/vids/griding-vid.mp4') }}" type="video/mp4">
+        <div class="video-wrapper video-wrapper--{{ $settings['about_video_ratio'] ?? 'wide' }}">
+            <video class="video-wrapper__player" width="100%" controls playsinline
+                   src="{{ !empty($settings['about_video']) ? asset('storage/' . $settings['about_video']) : asset('img/vids/griding-vid.mp4') }}">
                 Your browser does not support the video tag.
             </video>
         </div>
